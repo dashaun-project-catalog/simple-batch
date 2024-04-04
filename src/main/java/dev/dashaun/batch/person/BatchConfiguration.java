@@ -1,4 +1,4 @@
-package dev.dashaun.batch;
+package dev.dashaun.batch.person;
 
 import javax.sql.DataSource;
 
