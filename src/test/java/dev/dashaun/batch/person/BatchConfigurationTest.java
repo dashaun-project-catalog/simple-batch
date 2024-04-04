@@ -1,4 +1,4 @@
-package dev.dashaun.batch;
+package dev.dashaun.batch.person;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
