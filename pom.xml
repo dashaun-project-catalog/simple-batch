@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.2.4</version>
+    <version>3.2.5</version>
     <relativePath></relativePath>
   </parent>
   <groupId>dev.dashaun</groupId>
@@ -14,6 +14,11 @@
   <name>${project.groupId}.${project.artifactId}</name>
   <properties>
     <java.version>21</java.version>
+    <os.detected.arch>null</os.detected.arch>
+    <project.artifactId>null</project.artifactId>
+    <project.groupId>null</project.groupId>
+    <project.name>null</project.name>
+    <project.version>null</project.version>
   </properties>
   <dependencies>
     <dependency>
@@ -24,6 +29,11 @@
       <groupId>org.hsqldb</groupId>
       <artifactId>hsqldb</artifactId>
       <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>

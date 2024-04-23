@@ -11,6 +11,7 @@ import org.springframework.batch.item.database.JdbcBatchItemWriter;
 import org.springframework.batch.item.database.builder.JdbcBatchItemWriterBuilder;
 import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.builder.FlatFileItemReaderBuilder;
+import org.springframework.boot.sql.init.dependency.DependsOnDatabaseInitialization;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
@@ -37,6 +38,7 @@ class BatchConfiguration {
 	}
 
 	@Bean
+	@DependsOnDatabaseInitialization
 	public JdbcBatchItemWriter<Person> writer(DataSource dataSource) {
 		return new JdbcBatchItemWriterBuilder<Person>()
 			.sql("INSERT INTO people (first_name, last_name) VALUES (:firstName, :lastName)")

@@ -1,0 +1,7 @@
+spring:
+    batch:
+        job:
+            enabled: false
+    threads:
+        virtual:
+            enabled: true
