@@ -14,11 +14,6 @@
   <name>${project.groupId}.${project.artifactId}</name>
   <properties>
     <java.version>21</java.version>
-    <os.detected.arch>null</os.detected.arch>
-    <project.artifactId>null</project.artifactId>
-    <project.groupId>null</project.groupId>
-    <project.name>null</project.name>
-    <project.version>null</project.version>
   </properties>
   <dependencies>
     <dependency>
@@ -61,7 +56,10 @@
         </executions>
         <configuration>
           <image>
-            <builder>dashaun/builder:tiny</builder>
+            <buildpacks>
+              <buildpack>paketobuildpacks/java-native-image</buildpack>
+            </buildpacks>
+            <builder>paketobuildpacks/builder-jammy-buildpackless-tiny</builder>
             <createdDate>now</createdDate>
             <name>dashaun/${project.name}:v${project.version}-${os.detected.arch}</name>
           </image>
