@@ -1,5 +1,0 @@
----
-applications:
-  - name: simple-batch
-    instances: 1
-    path: ./

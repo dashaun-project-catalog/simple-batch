@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.3.1</version>
+    <version>3.4.3</version>
     <relativePath></relativePath>
   </parent>
   <groupId>dev.dashaun</groupId>
@@ -13,7 +13,7 @@
   <version>0</version>
   <name>${project.groupId}.${project.artifactId}</name>
   <properties>
-    <java.version>21</java.version>
+    <java.version>17</java.version>
   </properties>
   <dependencies>
     <dependency>
@@ -24,11 +24,6 @@
       <groupId>org.hsqldb</groupId>
       <artifactId>hsqldb</artifactId>
       <scope>runtime</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter</artifactId>
-      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -46,24 +41,6 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>build-info</id>
-            <goals>
-              <goal>build-info</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <image>
-            <buildpacks>
-              <buildpack>paketobuildpacks/java-native-image</buildpack>
-            </buildpacks>
-            <builder>paketobuildpacks/builder-jammy-buildpackless-tiny</builder>
-            <createdDate>now</createdDate>
-            <name>dashaun/${project.name}:v${project.version}-${os.detected.arch}</name>
-          </image>
-        </configuration>
       </plugin>
     </plugins>
   </build>

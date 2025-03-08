@@ -9,7 +9,7 @@ transforms it with custom code, and stores the final results in a database.
 
  ## Prerequisites
 
-- Java 21
+- Java 17
 
  ## Quick Start
 

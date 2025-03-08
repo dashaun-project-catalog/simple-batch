@@ -20,9 +20,8 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 @Configuration
 class BatchConfiguration {
 
-	// tag::readerwriterprocessor[]
 	@Bean
-	public FlatFileItemReader<Person> reader() {
+	FlatFileItemReader<Person> reader() {
 		return new FlatFileItemReaderBuilder<Person>()
 			.name("personItemReader")
 			.resource(new ClassPathResource("sample-data.csv"))
@@ -33,24 +32,22 @@ class BatchConfiguration {
 	}
 
 	@Bean
-	public PersonItemProcessor processor() {
+	PersonItemProcessor processor() {
 		return new PersonItemProcessor();
 	}
 
 	@Bean
 	@DependsOnDatabaseInitialization
-	public JdbcBatchItemWriter<Person> writer(DataSource dataSource) {
+	JdbcBatchItemWriter<Person> writer(DataSource dataSource) {
 		return new JdbcBatchItemWriterBuilder<Person>()
 			.sql("INSERT INTO people (first_name, last_name) VALUES (:firstName, :lastName)")
 			.dataSource(dataSource)
 			.beanMapped()
 			.build();
 	}
-	// end::readerwriterprocessor[]
 
-	// tag::jobstep[]
 	@Bean
-	public Job importUserJob(JobRepository jobRepository,Step step1, JobCompletionNotificationListener listener) {
+	Job importUserJob(JobRepository jobRepository,Step step1, JobCompletionNotificationListener listener) {
 		return new JobBuilder("importUserJob", jobRepository)
 			.listener(listener)
 			.start(step1)
@@ -58,7 +55,7 @@ class BatchConfiguration {
 	}
 
 	@Bean
-	public Step step1(JobRepository jobRepository, DataSourceTransactionManager transactionManager,
+	Step step1(JobRepository jobRepository, DataSourceTransactionManager transactionManager,
 					  FlatFileItemReader<Person> reader, PersonItemProcessor processor, JdbcBatchItemWriter<Person> writer) {
 		return new StepBuilder("step1", jobRepository)
 			.<Person, Person> chunk(3, transactionManager)
@@ -67,5 +64,4 @@ class BatchConfiguration {
 			.writer(writer)
 			.build();
 	}
-	// end::jobstep[]
 }
