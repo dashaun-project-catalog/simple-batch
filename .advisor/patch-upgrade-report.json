@@ -1,0 +1,66 @@
+{
+  "pom.xml" : {
+    "compile" : [ {
+      "coordinate" : "ch.qos.logback:logback-classic",
+      "oldVersion" : "1.5.34",
+      "newVersion" : "1.5.38",
+      "scope" : "compile"
+    }, {
+      "coordinate" : "ch.qos.logback:logback-core",
+      "oldVersion" : "1.5.34",
+      "newVersion" : "1.5.38",
+      "scope" : "compile"
+    }, {
+      "coordinate" : "com.fasterxml.jackson.core:jackson-core",
+      "oldVersion" : "2.21.4",
+      "newVersion" : "2.21.5",
+      "scope" : "compile"
+    }, {
+      "coordinate" : "com.fasterxml.jackson.core:jackson-databind",
+      "oldVersion" : "2.21.4",
+      "newVersion" : "2.21.5",
+      "scope" : "compile"
+    }, {
+      "coordinate" : "com.fasterxml.jackson.datatype:jackson-datatype-jdk8",
+      "oldVersion" : "2.21.4",
+      "newVersion" : "2.21.5",
+      "scope" : "compile"
+    }, {
+      "coordinate" : "com.fasterxml.jackson.datatype:jackson-datatype-jsr310",
+      "oldVersion" : "2.21.4",
+      "newVersion" : "2.21.5",
+      "scope" : "compile"
+    }, {
+      "coordinate" : "com.fasterxml.jackson.module:jackson-module-parameter-names",
+      "oldVersion" : "2.21.4",
+      "newVersion" : "2.21.5",
+      "scope" : "compile"
+    }, {
+      "coordinate" : "org.apache.logging.log4j:log4j-api",
+      "oldVersion" : "2.25.4",
+      "newVersion" : "2.25.5",
+      "scope" : "compile"
+    }, {
+      "coordinate" : "org.apache.logging.log4j:log4j-to-slf4j",
+      "oldVersion" : "2.25.4",
+      "newVersion" : "2.25.5",
+      "scope" : "compile"
+    }, {
+      "coordinate" : "org.jspecify:jspecify",
+      "oldVersion" : "1.0.0",
+      "newVersion" : "1.0.1",
+      "scope" : "compile"
+    }, {
+      "coordinate" : "org.springframework.boot:spring-boot-starter-batch-jdbc",
+      "oldVersion" : "4.0.7",
+      "newVersion" : "4.0.7.1",
+      "scope" : "compile"
+    } ],
+    "test" : [ {
+      "coordinate" : "org.springframework.batch:spring-batch-test",
+      "oldVersion" : "6.0.4",
+      "newVersion" : "6.0.4.1",
+      "scope" : "test"
+    } ]
+  }
+}
